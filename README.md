@@ -18,7 +18,7 @@
 
 ## 📌 Overview
 
-GitLab self-managed / Omnibus configuration security auditor
+OGitlabX — GitLab Self-Managed / Omnibus Config Auditor. It provides stdlib Ruby-literal parser for gitlab.rb (hashes, arrays, symbols, heredocs, ENV references), YAML-lite for gitlab.yml / LDAP heredocs, TOML-lite for Runner; `gitlab-ctl show-config` JSON / text export import. Built-in demo/self-test paths and severity gates help validate detections without touching production when those flags are used.
 
 ---
 
@@ -30,11 +30,6 @@ GitLab self-managed / Omnibus configuration security auditor
 - Sign-up, 2FA, group creation, OmniAuth SSO, SAML, OIDC, LDAP certificate verification & encryption
 - Plaintext SMTP / DB / Redis / S3 / GCS secrets, gitlab-secrets.json permission checks (never read)
 - Registry, Puma, Workhorse, Gitaly, Pages, Mattermost, Prometheus / Grafana, PostgreSQL & Redis in gitlab.rb
-- Geo secondary TLS, backups, version end-of-life
-- Runner privileged / docker.sock / shell executor
-- Secrets masked everywhere; --root discovery; CWE + MITRE
-- Export TXT / Markdown / JSON / CSV / SARIF 2.1.0
-- Self-test --demo, CI gates --fail-on / --min-severity
 
 ---
 
@@ -48,7 +43,10 @@ GitLab self-managed / Omnibus configuration security auditor
 ## 🚀 Usage
 
 ```bash
-./OGitlabX
+./OGitlabX                                     # interactive menu
+./OGitlabX --scan -r /path/to/root
+./OGitlabX --demo
+./OGitlabX --help
 ```
 
 ---
